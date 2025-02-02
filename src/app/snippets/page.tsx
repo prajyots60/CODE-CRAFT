@@ -34,6 +34,8 @@ function SnippetPage() {
       snippet.language.toLowerCase().includes(searchQuery.toLowerCase()) ||
       snippet.userName.toLowerCase().includes(searchQuery.toLowerCase());
 
+    {/*If selectedLanguage is null, all snippets pass this condition.
+Otherwise, the snippet must match the selected language to pass. */}
     const matchesLanguage =
       !selectedLanguage || snippet.language === selectedLanguage;
 

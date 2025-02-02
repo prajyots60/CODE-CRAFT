@@ -1,3 +1,4 @@
+"use client";
 import { useAuth } from "@clerk/nextjs";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
@@ -7,7 +8,7 @@ import { Star } from "lucide-react";
 const StarButton = ({ snippetId }: { snippetId: Id<"snippets"> }) => {
   const { isSignedIn } = useAuth();
 
-  const isStarred = useQuery(api.snippets.getSnippetStarred, { snippetId });
+  const isStarred = useQuery(api.snippets.isSnippetStarred, { snippetId });
   const starCount = useQuery(api.snippets.getSnippetStarCount, { snippetId });
   const star = useMutation(api.snippets.starSnippet);
 
