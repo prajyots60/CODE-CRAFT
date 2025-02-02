@@ -77,7 +77,9 @@ const SnippetCard = ({ snippet }: { snippet: Snippet }) => {
                 className="absolute top-5 right-5 z-10 flex gap-4 items-center"
                 onClick={(e) => e.preventDefault()}
               >
-                <StarButton snippetId={snippet._id} />
+                {user && (
+                  <StarButton snippetId={snippet._id} />
+                )}
 
                 {user?.id === snippet.userId && (
                   <div className="z-10" onClick={(e) => e.preventDefault()}>
