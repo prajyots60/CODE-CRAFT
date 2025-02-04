@@ -1,4 +1,5 @@
 'use client'
+import LoginButton from '@/components/LoginButton'
 import { SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
 import { User } from 'lucide-react'
 import React from 'react'
@@ -17,7 +18,7 @@ const HeaderProfileBtn = () => {
       </UserButton>
 
       <SignedOut>
-        <SignInButton />
+        <LoginButton />
       </SignedOut>
     </div>
   )
